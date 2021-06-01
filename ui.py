@@ -1,7 +1,7 @@
 from tkinter import *
 from core import *
 
-city_radius = 5
+city_radius = 10
 current_path = []
 best_path = []
 text_items = []
@@ -28,7 +28,7 @@ class GraphicalInterface:
 
 def create_context():
     master = Tk()
-    master.wm_title('TSP')
+    master.wm_title('Traveling Salesperson - Author: Jonas Bang')
     return master
 
 
@@ -42,8 +42,8 @@ def write_info_to_the_screen(canvas, num_all_possible_paths, progress):
     clear_text_items(canvas)
     percent_calculated = progress / num_all_possible_paths * 100
     text = "Calculated:" + limit_float_to_four_digits(percent_calculated) + " %"
-    text_items.append(canvas.create_text(120, 120, fill="white", font="Mono 12", text=text))
-
+    text_items.append(canvas.create_text(90, 20, fill="white", font="Roboto", text=text))
+    
 
 def limit_float_to_four_digits(number):
     return "{:10.4f}".format(number)
